@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_scope_privilege">
+    <sys_scope_privilege action="DELETE">
+        <operation>execute</operation>
+        <source_scope display_value="KLF Todo">8e18843f97a02550b2e1f97e6253af64</source_scope>
+        <status>allowed</status>
+        <sys_class_name>sys_scope_privilege</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-01-29 01:04:45</sys_created_on>
+        <sys_id>e79b40b397e02550b2e1f97e6253af1d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Glide API: string utilities</sys_name>
+        <sys_package display_value="KLF Todo" source="x_912467_klf_todo">8e18843f97a02550b2e1f97e6253af64</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="KLF Todo">8e18843f97a02550b2e1f97e6253af64</sys_scope>
+        <sys_update_name>sys_scope_privilege_e79b40b397e02550b2e1f97e6253af1d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-01-29 01:04:45</sys_updated_on>
+        <target_name>Glide API: string utilities</target_name>
+        <target_scope display_value="Global">global</target_scope>
+        <target_type>scriptable</target_type>
+    </sys_scope_privilege>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="KLF Todo">8e18843f97a02550b2e1f97e6253af64</application>
+        <file_path/>
+        <instance_id>3985fabbdb7037808aea21c40596199a</instance_id>
+        <instance_name>dev82424</instance_name>
+        <name>sys_scope_privilege_e79b40b397e02550b2e1f97e6253af1d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_scope_privilege"><sys_scope_privilege action="INSERT_OR_UPDATE"><operation>execute</operation><source_scope display_value="KLF Todo">8e18843f97a02550b2e1f97e6253af64</source_scope><status>allowed</status><sys_class_name>sys_scope_privilege</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2023-01-29 01:04:45</sys_created_on><sys_id>e79b40b397e02550b2e1f97e6253af1d</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Glide API: string utilities</sys_name><sys_package display_value="KLF Todo" source="x_912467_klf_todo">8e18843f97a02550b2e1f97e6253af64</sys_package><sys_policy/><sys_scope display_value="KLF Todo">8e18843f97a02550b2e1f97e6253af64</sys_scope><sys_update_name>sys_scope_privilege_e79b40b397e02550b2e1f97e6253af1d</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2023-01-29 01:04:45</sys_updated_on><target_name>Glide API: string utilities</target_name><target_scope display_value="Global">global</target_scope><target_type>scriptable</target_type></sys_scope_privilege></record_update>]]></payload>
+        <payload_hash>-1753999269</payload_hash>
+        <record_name>Glide API: string utilities</record_name>
+        <reverted_from/>
+        <source>3e580c3f97a02550b2e1f97e6253af26</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-01-29 01:04:45</sys_created_on>
+        <sys_id>ef9b40b397e02550b2e1f97e6253af1f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>185fb0e22b40000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-01-29 01:04:45</sys_updated_on>
+        <type>Cross scope privilege</type>
+        <update_guid>2b9b40b321e02550497b657aef6d4d1f</update_guid>
+        <update_guid_history>2b9b40b321e02550497b657aef6d4d1f:-1753999269</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-01-30 14:08:56</sys_created_on>
+        <sys_db_object display_value="" name="sys_scope_privilege">sys_scope_privilege</sys_db_object>
+        <sys_id>21babfa8273942e48781603a1bb2e4c1</sys_id>
+        <sys_metadata>e79b40b397e02550b2e1f97e6253af1d</sys_metadata>
+        <sys_name>Glide API: string utilities</sys_name>
+        <sys_package display_value="KLF Todo" source="x_912467_klf_todo">8e18843f97a02550b2e1f97e6253af64</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="KLF Todo">8e18843f97a02550b2e1f97e6253af64</sys_scope>
+        <sys_scope_delete display_value="">216e05d6a433438088a6858e4aa50440</sys_scope_delete>
+        <sys_update_name>sys_scope_privilege_e79b40b397e02550b2e1f97e6253af1d</sys_update_name>
+        <sys_update_version display_value="sys_scope_privilege_e79b40b397e02550b2e1f97e6253af1d">ef9b40b397e02550b2e1f97e6253af1f</sys_update_version>
+    </sys_metadata_delete>
+</record_update>
