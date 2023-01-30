@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element audit="true" db_object_id="3658447f97a02550b2e1f97e6253afbd" label="Task" max_length="40" name="x_912467_klf_todo_task" type="collection">
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
         <element label="Assigned Group" max_length="32" name="assigned_group" reference="sys_user_group" reference_qual="active=true^EQ" reference_qual_condition="active=true^EQ" type="reference"/>
         <element dependent="assigned_group" dependent_on_field="assigned_group" label="Assigned To" max_length="32" name="assigned_to" reference="sys_user" type="reference" use_dependent_field="true"/>
         <element label="Closed By" max_length="32" name="closed_by" reference="sys_user" type="reference"/>

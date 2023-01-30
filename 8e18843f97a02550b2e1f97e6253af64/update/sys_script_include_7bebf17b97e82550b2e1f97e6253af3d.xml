@@ -33,6 +33,14 @@ const Authenticated = (function() {
         isMemberOf(groupSysId) {
             return groupUtils.isMemberOf(groupSysId, this.getUserSysId());
         }
+
+        /**
+         * Returns true if user is a ServiceNow admin.
+         * @returns {boolean} true if user is ServiceNow admin
+         */
+        isAdmin() {
+            return gs.hasRole('admin');
+        }
     }
 
     return new Authenticated();

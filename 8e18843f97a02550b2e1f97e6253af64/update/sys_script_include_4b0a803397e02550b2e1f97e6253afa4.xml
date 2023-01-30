@@ -19,23 +19,62 @@ const TaskManager = (function() {
         DRAFT: 'draft',
         SUBMITTED: 'submitted',
         IN_PROGRESS: 'in_progress',
-        COMPLETED: 'completed',
+        CLOSED: 'closed',
         CANCELED: 'canceled'
     };
+
+    const groupUtils = x_912467_klf.GroupUtils;
 
     class TaskManager {
 
         /**
          * Called by business rule when task is assigned to a user
+         * @param {GlideRecord} task x_912467_klf_todo_task 
          */
         onAssigned(task) {
             // set assigned fields
             task.assigned_to = Authenticated.getUserSysId();
+
+            if(task.status == STATUS.SUBMITTED) {
+                task.status = STATUS.IN_PROGRESS;
+            }
+        }
+
+        /**
+         * Called by business rule when task status changes to closed
+         * Need to set closed fields
+         * @param {GlideRecord} task x_912467_klf_todo_task closed task
+         */
+        onClosed(task) {
+            task.closed_by = Authenticated.getUserSysId();
+            task.closed_on = new GlideDateTime();
+        }
+
+        /**
+         * Called by business rule when task status changes
+         * @param {GlideRecord} task x_912467_klf_todo_task
+         */
+        onStatusChange(task) {
+            // Need to update active field whenever status changes
+            this.updateActive(task);
+        }
+
+        /**
+         * Update active field on task
+         * When task status reaches an inactive status set the active field to false
+         * Inactive statuses are closed, canceled
+         */
+        updateActive(task) {
+            if(task.status == STATUS.CLOSED || task.status == STATUS.CANCELED) {
+                task.active = false;
+            }
         }
 
         /**
          * Returns true if user can write to the task
          * User can write to the task if the task is a new record
+         * if the user is an admin always return true
+         * if the task is inactive return false if not admin
          * if the user is the creator and the task is in draft status
          * if the user is the original submitter of the task and the task is in draft status
          * if the user is the assignee of the task and the task is in submitted or in progress status
@@ -43,6 +82,16 @@ const TaskManager = (function() {
          * @param {GlideRecord} task x_912467_klf_todo_task to check
          */
         canWrite(task) {
+            if(Authenticated.isAdmin) {
+                return true;
+            }
+
+            // eslint complains this isn't a boolean, but i know it is
+            // eslint-disable-next-line
+            if(!Boolean(task.active)) {
+                return false;
+            }
+
             return task.isNewRecord() ||
                 (this.isSubmitter(task) && task.status == STATUS.DRAFT) ||
                 (this.isCreator(task) && task.status == STATUS.DRAFT) ||
@@ -105,9 +154,24 @@ const TaskManager = (function() {
         }
 
         /**
-         * @constructor
+         * Returns true if user has access to "Close" UI Action
+         * User can close if the task is in progress or submitted
+         * @param {GlideRecord} task x_912467_klf_todo_task to check
+         * @returns {boolean} True if user has access to "Close" UI Action
          */
-        constructor() {}
+        showClose(task) {
+            return this.canWrite(task) && 
+                (task.status == STATUS.IN_PROGRESS || task.status == STATUS.SUBMITTED);
+        }
+
+        /**
+         * Closes the task by setting the status to closed
+         * @param {GlideRecord} task x_912467_klf_todo_task to close
+         */
+        close(task) {
+            task.status = STATUS.CLOSED;
+            task.update();
+        }
 
         /**
          * Called by business rule when task is submitted
@@ -117,6 +181,27 @@ const TaskManager = (function() {
             // set submitted fields
             task.submitted_by = Authenticated.getUserSysId();
             task.submitted_on = new GlideDateTime();
+
+            // set the default assigned group
+            task.assigned_group = this.getDefaultAssignedGroup();
+        }
+
+        /**
+         * Returns the default assigned group sys_id for the task
+         * getting it from a system property
+         * @returns {string} sys_id of the default assigned group
+         */
+        getDefaultAssignedGroup() {
+            const groupName = gs.getProperty('x_912467_klf_todo.default_assigned_group');
+            if(!groupName) {
+                const error = 'Default assigned group not set in system property x_912467_klf_todo.default_assigned_group';
+                gs.error(error);
+                gs.addErrorMessage(error);
+            }
+
+            const defaultGroup = groupUtils.getGroupByName(groupName);
+
+            return defaultGroup ? defaultGroup.getUniqueValue() : '';
         }
 
 
@@ -126,7 +211,8 @@ const TaskManager = (function() {
          * @returns {boolean} True if user has access to "Submit" UI Action
          */
         showSubmit(task) {
-            return task.status == STATUS.DRAFT;
+            // Initially status will be empty so show the action
+            return task.status.nil() || task.status == STATUS.DRAFT;
         }
 
         /**
@@ -162,7 +248,8 @@ const TaskManager = (function() {
          * @returns {boolean} True if user has access to "Save as Draft" UI Action
          */
         showSaveAsDraft(task) {
-            return task.status == STATUS.DRAFT;
+            // Initially status will be empty so show the action
+            return task.status.nil() || task.status == STATUS.DRAFT;
         }
 
         /**

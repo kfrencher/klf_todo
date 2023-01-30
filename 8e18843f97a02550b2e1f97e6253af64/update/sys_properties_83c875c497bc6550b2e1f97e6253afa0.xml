@@ -4,14 +4,14 @@
         <description/>
         <ignore_cache>true</ignore_cache>
         <is_private>false</is_private>
-        <name>x_912467_klf_todo.approval_group</name>
+        <name>x_912467_klf_todo.default_assigned_group</name>
         <read_roles/>
-        <suffix>approval_group</suffix>
+        <suffix>default_assigned_group</suffix>
         <sys_class_name>sys_properties</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-01-30 03:41:06</sys_created_on>
         <sys_id>83c875c497bc6550b2e1f97e6253afa0</sys_id>
-        <sys_name>x_912467_klf_todo.approval_group</sys_name>
+        <sys_name>x_912467_klf_todo.default_assigned_group</sys_name>
         <sys_package display_value="KLF Todo" source="x_912467_klf_todo">8e18843f97a02550b2e1f97e6253af64</sys_package>
         <sys_policy/>
         <sys_scope display_value="KLF Todo">8e18843f97a02550b2e1f97e6253af64</sys_scope>
