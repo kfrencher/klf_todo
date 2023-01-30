@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description/>
+        <ignore_cache>true</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_912467_klf_todo.approval_group</name>
+        <read_roles/>
+        <suffix>approval_group</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-01-30 03:41:06</sys_created_on>
+        <sys_id>83c875c497bc6550b2e1f97e6253afa0</sys_id>
+        <sys_name>x_912467_klf_todo.approval_group</sys_name>
+        <sys_package display_value="KLF Todo" source="x_912467_klf_todo">8e18843f97a02550b2e1f97e6253af64</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="KLF Todo">8e18843f97a02550b2e1f97e6253af64</sys_scope>
+        <sys_update_name>sys_properties_83c875c497bc6550b2e1f97e6253afa0</sys_update_name>
+        <type>string</type>
+        <value>Trivium</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=83c875c497bc6550b2e1f97e6253afa0"/>
+</record_update>

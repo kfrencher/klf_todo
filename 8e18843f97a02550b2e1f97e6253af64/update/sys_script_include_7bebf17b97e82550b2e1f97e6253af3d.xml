@@ -11,7 +11,8 @@
  * Object that represents the currently authenticated user.
  */
 const Authenticated = (function() {
-    const groupUtils = x_912467_klf.GroupUtils;
+
+    var groupUtils = x_912467_klf.GroupUtils;
 
     class Authenticated {
         constructor() { }
@@ -25,13 +26,13 @@ const Authenticated = (function() {
         }
 
         /**
-         * Returns true if the user is a member of the specified group.
-         * @param {string} groupSysId sys_id of the group to check
+         * Returns true if user is member of the
+         * sys_user_group.sys_id
+         * @param {string} groupSysId sys_user_group.sys_id
          */
         isMemberOf(groupSysId) {
-            return groupUtils.isMemberOf(this.getUserSysId(), groupSysId);
+            return groupUtils.isMemberOf(groupSysId, this.getUserSysId());
         }
-
     }
 
     return new Authenticated();

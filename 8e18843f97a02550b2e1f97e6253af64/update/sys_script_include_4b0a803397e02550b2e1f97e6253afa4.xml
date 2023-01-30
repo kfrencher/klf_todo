@@ -26,15 +26,41 @@ const TaskManager = (function() {
     class TaskManager {
 
         /**
+         * Called by business rule when task is assigned to a user
+         */
+        onAssigned(task) {
+            // set assigned fields
+            task.assigned_to = Authenticated.getUserSysId();
+        }
+
+        /**
          * Returns true if user can write to the task
          * User can write to the task if the task is a new record
-         * if the user is the creator
-         * if the user is the original submitter of the task
-         * if the user is the assignee of the task
-         * if the user is a member of the task's group
+         * if the user is the creator and the task is in draft status
+         * if the user is the original submitter of the task and the task is in draft status
+         * if the user is the assignee of the task and the task is in submitted or in progress status
+         * if the user is a member of the task's assigned group and the task is in submitted or in progress status
          * @param {GlideRecord} task x_912467_klf_todo_task to check
          */
         canWrite(task) {
+            return task.isNewRecord() ||
+                (this.isSubmitter(task) && task.status == STATUS.DRAFT) ||
+                (this.isCreator(task) && task.status == STATUS.DRAFT) ||
+                (this.isAssigned(task) && (task.status == STATUS.SUBMITTED || task.status == STATUS.IN_PROGRESS)) ||
+                (this.isInAssignedGroup(task) && (task.status == STATUS.SUBMITTED || task.status == STATUS.IN_PROGRESS));
+        }
+
+        /**
+         * Returns true if user can read the task
+         * if task is new record
+         * if the user is the creator
+         * if the user is the original submitter of the task
+         * if the user is the assignee of the task
+         * if the user is a member of the task's group 
+         * @param {GlideRecord} task x_912467_klf_todo_task to check
+         * @returns {boolean} True if user can read the task
+         */
+        canRead(task) {
             return task.isNewRecord() ||
                 this.isSubmitter(task) ||
                 this.isCreator(task) ||
@@ -90,6 +116,7 @@ const TaskManager = (function() {
         onSubmit(task) {
             // set submitted fields
             task.submitted_by = Authenticated.getUserSysId();
+            task.submitted_on = new GlideDateTime();
         }
 
 
@@ -109,6 +136,23 @@ const TaskManager = (function() {
          */
         submit(task) {
             task.status = STATUS.SUBMITTED;
+            task.update();
+        }
+
+        /**
+         * Returns true if user has access to "Save" UI Action
+         * @param {GlideRecord} task x_912467_klf_todo_task to check
+         * @returns {boolean} True if user has access to "Save" UI Action
+         */
+        showSave(task) {
+            return this.canWrite(task) && 
+                (task.status == STATUS.SUBMITTED || task.status == STATUS.IN_PROGRESS);
+        }
+
+        /**
+         * UI Action to save a task. This saves the task
+         */
+        save(task) {
             task.update();
         }
 
