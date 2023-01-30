@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_portal_search_source">
+    <m2m_sp_portal_search_source action="INSERT_OR_UPDATE">
+        <order>100</order>
+        <sp_portal display_value="KLF Todo">903a843397e02550b2e1f97e6253af36</sp_portal>
+        <sp_search_source display_value="KLF Todo">303b4c7397e02550b2e1f97e6253af61</sp_search_source>
+        <sys_class_name>m2m_sp_portal_search_source</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-01-29 01:03:33</sys_created_on>
+        <sys_id>355bc47397e02550b2e1f97e6253afd2</sys_id>
+        <sys_name>KLF Todo.KLF Todo</sys_name>
+        <sys_package display_value="KLF Todo" source="x_912467_klf_todo">8e18843f97a02550b2e1f97e6253af64</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="KLF Todo">8e18843f97a02550b2e1f97e6253af64</sys_scope>
+        <sys_update_name>m2m_sp_portal_search_source_355bc47397e02550b2e1f97e6253afd2</sys_update_name>
+    </m2m_sp_portal_search_source>
+</record_update>

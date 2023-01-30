@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="INSERT_OR_UPDATE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>klf_home - Container 2</name>
+        <order>2</order>
+        <sp_page display_value="klf_home">db2cc8b397e02550b2e1f97e6253aff1</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-01-29 01:07:27</sys_created_on>
+        <sys_id>5b3c84b397e02550b2e1f97e6253af39</sys_id>
+        <sys_name>klf_home - Container 2</sys_name>
+        <sys_package display_value="KLF Todo" source="x_912467_klf_todo">8e18843f97a02550b2e1f97e6253af64</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="KLF Todo">8e18843f97a02550b2e1f97e6253af64</sys_scope>
+        <sys_update_name>sp_container_5b3c84b397e02550b2e1f97e6253af39</sys_update_name>
+        <title/>
+        <width>container</width>
+    </sp_container>
+</record_update>

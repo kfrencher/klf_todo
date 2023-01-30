@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_portal">
+    <sp_portal action="INSERT_OR_UPDATE">
+        <css_variables/>
+        <default>false</default>
+        <enable_ais>false</enable_ais>
+        <enable_favorites>false</enable_favorites>
+        <hide_portal_name>false</hide_portal_name>
+        <homepage display_value="klf_home">db2cc8b397e02550b2e1f97e6253aff1</homepage>
+        <icon/>
+        <kb_knowledge_base/>
+        <kb_knowledge_page display_value="kb_view2">26c2e030d7201200a9addd173e24d437</kb_knowledge_page>
+        <login_page display_value="landing">36c61807cb31120000f8d856634c9ca9</login_page>
+        <logo/>
+        <notfound_page display_value="404">3c2c9063cb11020000f8d856634c9c1f</notfound_page>
+        <quick_start_config/>
+        <sc_catalog/>
+        <sc_catalog_page/>
+        <sc_category_page/>
+        <search_application/>
+        <search_results_configuration/>
+        <sp_chat_queue/>
+        <sp_rectangle_menu display_value="KLF Todo">e96b40b397e02550b2e1f97e6253aff0</sp_rectangle_menu>
+        <sys_class_name>sp_portal</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-01-29 00:58:45</sys_created_on>
+        <sys_id>903a843397e02550b2e1f97e6253af36</sys_id>
+        <sys_name>KLF Todo</sys_name>
+        <sys_package display_value="KLF Todo" source="x_912467_klf_todo">8e18843f97a02550b2e1f97e6253af64</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="KLF Todo">8e18843f97a02550b2e1f97e6253af64</sys_scope>
+        <sys_update_name>sp_portal_903a843397e02550b2e1f97e6253af36</sys_update_name>
+        <theme display_value="KLF Todo High Contrast">1baa0c3397e02550b2e1f97e6253afbc</theme>
+        <title>KLF Todo</title>
+        <ts_index_group/>
+        <url_suffix>todo</url_suffix>
+    </sp_portal>
+    <sys_translated_text action="delete_multiple" query="documentkey=903a843397e02550b2e1f97e6253af36"/>
+</record_update>
