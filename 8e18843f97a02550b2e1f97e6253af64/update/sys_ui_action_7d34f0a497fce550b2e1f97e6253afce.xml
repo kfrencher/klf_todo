@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
     <sys_ui_action action="INSERT_OR_UPDATE">
-        <action_name>klf_close</action_name>
+        <action_name>klf_complete</action_name>
         <active>true</active>
         <client>false</client>
         <client_script_v2><![CDATA[function onClick(g_form) {
 
 }]]></client_script_v2>
         <comments/>
-        <condition>TaskManager.showClose(current)</condition>
+        <condition>TaskManager.showComplete(current)</condition>
         <form_action>true</form_action>
         <form_button>true</form_button>
         <form_button_v2>false</form_button_v2>
@@ -27,10 +27,10 @@
         <list_save_with_form_button>false</list_save_with_form_button>
         <list_style/>
         <messages/>
-        <name>Close</name>
+        <name>Complete</name>
         <onclick/>
         <order>100</order>
-        <script><![CDATA[TaskManager.close(current);
+        <script><![CDATA[TaskManager.complete(current);
 action.setRedirectURL(current);]]></script>
         <show_insert>true</show_insert>
         <show_multiple_update>false</show_multiple_update>
@@ -38,16 +38,16 @@ action.setRedirectURL(current);]]></script>
         <show_update>true</show_update>
         <sys_class_name>sys_ui_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2023-01-30 14:56:42</sys_created_on>
+        <sys_created_on>2023-01-31 11:58:30</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>b3735c5097b8a550b2e1f97e6253af0a</sys_id>
-        <sys_name>Close</sys_name>
+        <sys_id>7d34f0a497fce550b2e1f97e6253afce</sys_id>
+        <sys_name>Complete</sys_name>
         <sys_overrides/>
         <sys_package display_value="KLF Todo" source="x_912467_klf_todo">8e18843f97a02550b2e1f97e6253af64</sys_package>
         <sys_policy/>
         <sys_scope display_value="KLF Todo">8e18843f97a02550b2e1f97e6253af64</sys_scope>
-        <sys_update_name>sys_ui_action_b3735c5097b8a550b2e1f97e6253af0a</sys_update_name>
+        <sys_update_name>sys_ui_action_7d34f0a497fce550b2e1f97e6253afce</sys_update_name>
         <table>x_912467_klf_todo_task</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

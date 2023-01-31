@@ -14,7 +14,7 @@
         <element choice="3" default="draft" label="Status" max_length="40" name="status" type="string">
             <choice>
                 <element inactive_on_update="false" label="Canceled" value="canceled"/>
-                <element inactive_on_update="false" label="Closed" value="closed"/>
+                <element inactive_on_update="false" label="Completed" value="completed"/>
                 <element inactive_on_update="false" label="Draft" value="draft"/>
                 <element inactive_on_update="false" label="In Progress" value="in_progress"/>
                 <element inactive_on_update="false" label="Submitted" value="submitted"/>

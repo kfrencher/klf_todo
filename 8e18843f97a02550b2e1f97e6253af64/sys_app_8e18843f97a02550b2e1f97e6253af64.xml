@@ -16,7 +16,7 @@
         <menu display_value="Todo">8988087f97a02550b2e1f97e6253afb9</menu>
         <name>KLF Todo</name>
         <private>false</private>
-        <restrict_table_access>false</restrict_table_access>
+        <restrict_table_access>true</restrict_table_access>
         <runtime_access_tracking/>
         <scope>x_912467_klf_todo</scope>
         <scoped_administration>false</scoped_administration>
