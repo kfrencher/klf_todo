@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_912467_klf_todo.TaskManagerTest</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>TaskManagerTest</name>
+        <script><![CDATA[function TestTaskManagerTest(outputs, steps, params, stepResult, assertEqual) {
+    describe('TaskManager.canWrite', function() {
+        var testUtils = global.KLF_TestUtils;
+
+        var task = null;
+        beforeEach(function() {
+            // Create a task
+            testUtils.impersonateCommonUser();
+            task = getSubmittedTask();
+        });
+
+        afterEach(function() {
+            testUtils.impersonateAdminUser();
+            testUtils.deleteRecordsCreatedByCommonUser('x_912467_klf_todo_task');
+        });
+
+        it('should return true if user is assigned to task', function() {
+
+        });
+
+        it('should return false if user didnt create task', function() {
+
+        });
+
+        /**
+         * Creates a non-persisted todo that has all the required fields
+         * set but has not been persisted
+         * @returns {GlideRecord} x_912467_klf_todo_task
+         */
+        function createTask() {
+            var todo = new GlideRecord('x_912467_klf_todo_task');
+            todo.newRecord();
+            todo.label = 'Test Task';
+            return todo;
+        }
+
+        /**
+         * Creates a persisted task that represents a task that has
+         * been submitted
+         * @returns {GlideRecord} x_912467_klf_todo_task
+         */
+        function getSubmittedTask() {
+            var todo = createTask();
+            TaskManager.submit(todo);
+            return todo;
+        }
+    });
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-01-31 13:38:05</sys_created_on>
+        <sys_id>9e3b012497702950b2e1f97e6253af68</sys_id>
+        <sys_name>TaskManagerTest</sys_name>
+        <sys_package display_value="KLF Todo" source="x_912467_klf_todo">8e18843f97a02550b2e1f97e6253af64</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="KLF Todo">8e18843f97a02550b2e1f97e6253af64</sys_scope>
+        <sys_update_name>sys_script_include_9e3b012497702950b2e1f97e6253af68</sys_update_name>
+    </sys_script_include>
+</record_update>
