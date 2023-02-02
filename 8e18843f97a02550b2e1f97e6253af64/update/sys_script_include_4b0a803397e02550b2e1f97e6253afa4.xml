@@ -23,18 +23,22 @@ const TaskManager = (function() {
         CANCELED: 'canceled'
     };
 
+    const groupUtils = x_912467_klf.GroupUtils;
+
     class TaskManager {
         /**
          * Returns true if user has access to "Complete" UI Action
          * Show complete when task is in progress or submitted status
+         * @param {GlideRecord} task x_912467_klf_todo_task to check
          */
         showComplete(task) {
             return this.canWrite(task) && 
-                task.status == STATUS.IN_PROGRESS || task.status == STATUS.SUBMITTED;
+                (task.status == STATUS.IN_PROGRESS || task.status == STATUS.SUBMITTED);
         }
 
         /**
          * UI Action to complete a task. This completes the task
+         * @param {GlideRecord} task x_912467_klf_todo_task to complete
          */
         complete(task) {
             task.status = STATUS.COMPLETED;
@@ -43,6 +47,7 @@ const TaskManager = (function() {
 
         /**
          * Called by business rule when task is assigned to a user
+         * @param {GlideRecord} task x_912467_klf_todo_task that was assigned
          */
         onAssigned(task) {
             // set assigned fields
@@ -133,6 +138,20 @@ const TaskManager = (function() {
             // set submitted fields
             task.submitted_by = Authenticated.getUserSysId();
             task.submitted_on = new GlideDateTime();
+            task.assigned_group = this.getDefaultAssignedGroup();
+        }
+
+        /**
+         * Returns the default assigned group for the task
+         * @returns {string} sys_id of the default assigned group
+         */
+        getDefaultAssignedGroup() {
+            const groupName = gs.getProperty('x_912467_klf_todo.default_assigned_group');
+            const group = groupUtils.getGroupByName(groupName);
+            if(!group) {
+                throw new Error(`Default assigned group ${groupName} not found`);
+            }
+            return group.getUniqueValue();
         }
 
 
