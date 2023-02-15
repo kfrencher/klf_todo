@@ -23,7 +23,37 @@
         <sys_update_name>sp_instance_menu_e96b40b397e02550b2e1f97e6253aff0</sys_update_name>
         <title>KLF Todo</title>
         <url/>
-        <widget_parameters/>
+        <widget_parameters><![CDATA[{
+	"enable_cart":{
+		"displayValue":"false",
+		"value":false
+	},
+	"auto_update_cart":{
+		"displayValue":"true",
+		"value":true
+	},
+	"exclude_search_on_homepage":{
+		"displayValue":"true",
+		"value":true
+	},
+	"enable_wishlist":{
+		"displayValue":"false",
+		"value":false
+	},
+	"enable_requests":{
+		"displayValue":"false",
+		"value":false
+	},
+	"enable_tasks":{
+		"displayValue":"false",
+		"value":false
+	},
+    "enable_more_items":{
+      	"displayValue":"true",
+      	"value":true,
+        "sysId":"01ef85b65368301056c1ddeeff7b12ce"
+    }
+}]]></widget_parameters>
     </sp_instance_menu>
     <sys_translated_text action="delete_multiple" query="documentkey=e96b40b397e02550b2e1f97e6253aff0"/>
 </record_update>

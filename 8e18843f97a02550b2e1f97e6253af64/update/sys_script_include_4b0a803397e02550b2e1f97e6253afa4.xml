@@ -161,7 +161,8 @@ const TaskManager = (function() {
          * @returns {boolean} True if user has access to "Submit" UI Action
          */
         showSubmit(task) {
-            return task.status == STATUS.DRAFT;
+            return task.isNewRecord() ||
+                task.status == STATUS.DRAFT;
         }
 
         /**
@@ -198,7 +199,8 @@ const TaskManager = (function() {
          * @returns {boolean} True if user has access to "Save as Draft" UI Action
          */
         showSaveAsDraft(task) {
-            return task.status == STATUS.DRAFT;
+            return task.isNewRecord() ||
+                task.status == STATUS.DRAFT;
         }
 
         /**

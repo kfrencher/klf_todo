@@ -5,17 +5,17 @@
         <enable_ais>false</enable_ais>
         <enable_favorites>false</enable_favorites>
         <hide_portal_name>false</hide_portal_name>
-        <homepage display_value="klf_home">db2cc8b397e02550b2e1f97e6253aff1</homepage>
+        <homepage display_value="todo_dashboard">6c2d67439770e910b2e1f97e6253af7a</homepage>
         <icon/>
         <kb_knowledge_base/>
-        <kb_knowledge_page display_value="kb_view2">26c2e030d7201200a9addd173e24d437</kb_knowledge_page>
+        <kb_knowledge_page display_value="esc_knowledge_home">f8b574a0b7202300d0ac9277ee11a91d</kb_knowledge_page>
         <login_page display_value="landing">36c61807cb31120000f8d856634c9ca9</login_page>
         <logo/>
         <notfound_page display_value="404">3c2c9063cb11020000f8d856634c9c1f</notfound_page>
-        <quick_start_config/>
+        <quick_start_config>[{"favorite":{"icon_checked":"fa-heart","icon_unchecked":"fa-heart-o","color":"primary"}}]</quick_start_config>
         <sc_catalog/>
-        <sc_catalog_page/>
-        <sc_category_page/>
+        <sc_catalog_page display_value="esc_sc_category">c221e520b7602300d0ac9277ee11a960</sc_catalog_page>
+        <sc_category_page display_value="esc_sc_category">c221e520b7602300d0ac9277ee11a960</sc_category_page>
         <search_application/>
         <search_results_configuration/>
         <sp_chat_queue/>
@@ -29,7 +29,7 @@
         <sys_policy/>
         <sys_scope display_value="KLF Todo">8e18843f97a02550b2e1f97e6253af64</sys_scope>
         <sys_update_name>sp_portal_903a843397e02550b2e1f97e6253af36</sys_update_name>
-        <theme display_value="KLF Todo High Contrast">1baa0c3397e02550b2e1f97e6253afbc</theme>
+        <theme display_value="TODO EC Theme">cdf573cb9770e910b2e1f97e6253af7f</theme>
         <title>KLF Todo</title>
         <ts_index_group/>
         <url_suffix>todo</url_suffix>
