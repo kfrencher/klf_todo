@@ -17,6 +17,7 @@
                 <element inactive_on_update="false" label="Completed" value="completed"/>
                 <element inactive_on_update="false" label="Draft" value="draft"/>
                 <element inactive_on_update="false" label="In Progress" value="in_progress"/>
+                <element inactive_on_update="false" label="Rejected" value="rejected"/>
                 <element inactive_on_update="false" label="Submitted" value="submitted"/>
             </choice>
         </element>

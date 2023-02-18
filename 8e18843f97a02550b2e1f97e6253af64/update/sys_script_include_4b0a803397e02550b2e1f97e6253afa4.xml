@@ -9,23 +9,80 @@
         <name>TaskManager</name>
         <script><![CDATA[/**
  * Object for managing todo tasks
- * @class TaskManagerClass
+ * 
+ * Initial status will be DRAFT.
+ * Then user will submit the task using {@link TaskManager.submit} UI Action.
+ * When submitted the a busines rule with trigger {@link TaskManager.onSubmit}.
+ * {@link TaskManager.onSubmit} will set the assigned group and submitted by fields.
+ * A member from the assigned group will then approve the task using {@link TaskManager.approve} UI Action.
+ * Or a member from the assigned group will then reject the task using {@link TaskManager.reject} UI Action.
+ * The task will then be in In Progress status if approved.
+ * The task will be in Rejected status if rejected and the task will be inactive.
+ * Once the task is in In Progress status, the assignee will complete the task using {@link TaskManager.complete} UI Action.
  */
 const TaskManager = (function() {
     /**
      * Values for x_912467_klf_todo_task.status field
+     * @type {{DRAFT:string, SUBMITTED:string, IN_PROGRESS:string, COMPLETED:string, REJECTED:string, CANCELED:string}}
      */
     const STATUS = {
         DRAFT: 'draft',
         SUBMITTED: 'submitted',
         IN_PROGRESS: 'in_progress',
         COMPLETED: 'completed',
+        REJECTED: 'rejected',
         CANCELED: 'canceled'
     };
 
     const groupUtils = x_912467_klf.GroupUtils;
 
     class TaskManager {
+        /**
+         * Called by before business rule when task is completed
+         * @param {GlideRecord} task 
+         */
+		onComplete(task) {
+            task.closed_on = new GlideDateTime();
+            task.closed_by = Authenticated.getUserSysId();
+		}
+
+        /**
+         * Show Reject UI Action whenever we show Approve UI Action
+         * @param {GlideRecord} task x_912467_klf_todo_task to check
+         */
+        showReject(task) {
+            this.showApprove(task);
+        }
+
+        /**
+         * UI Action to approve a task. This approves the task
+         * @param {GlideRecord} task x_912467_klf_todo_task to approve
+         */
+        reject(task) {
+            task.status = STATUS.REJECTED;
+            task.update();
+        }
+
+        /**
+         * Returns true if user has access to "Approve" UI Action
+         * Show approve when task is in progress or submitted status
+         * @param {GlideRecord} task x_912467_klf_todo_task to check
+         */
+        showApprove(task) {
+            return this.canWrite(task) && 
+                this.isInAssignedGroup(task) &&
+                task.status == STATUS.SUBMITTED;
+        }
+
+        /**
+         * UI Action to approve a task. This approves the task
+         * @param {GlideRecord} task x_912467_klf_todo_task to approve
+         */
+        approve(task) {
+            task.status = STATUS.IN_PROGRESS;
+            task.update();
+        }
+
         /**
          * Returns true if user has access to "Complete" UI Action
          * Show complete when task is in progress or submitted status

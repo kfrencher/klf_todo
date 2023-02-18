@@ -81,6 +81,22 @@
             <element>status</element>
             <hint/>
             <inactive>false</inactive>
+            <label>Rejected</label>
+            <language>en</language>
+            <name>x_912467_klf_todo_task</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-02-18 23:08:28</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <value>rejected</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>status</element>
+            <hint/>
+            <inactive>false</inactive>
             <label>Submitted</label>
             <language>en</language>
             <name>x_912467_klf_todo_task</name>
