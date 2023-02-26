@@ -15,7 +15,7 @@ const Authenticated = (function() {
     var groupUtils = x_912467_klf.GroupUtils;
 
     class Authenticated {
-        constructor() { }
+        constructor() {}
 
         /**
          * Returns an array of sys_user_group.sys_id for the currently authenticated user.
@@ -36,7 +36,7 @@ const Authenticated = (function() {
         /**
          * Returns true if user is member of the
          * sys_user_group.sys_id
-         * @param {string} groupSysId sys_user_group.sys_id
+         * @param {string} groupSysId - sys_user_group.sys_id
          */
         isMemberOf(groupSysId) {
             return groupUtils.isMemberOf(groupSysId, this.getUserSysId());
@@ -57,13 +57,13 @@ const Authenticated = (function() {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-01-29 09:15:33</sys_created_on>
         <sys_id>7bebf17b97e82550b2e1f97e6253af3d</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Authenticated</sys_name>
         <sys_package display_value="KLF Todo" source="x_912467_klf_todo">8e18843f97a02550b2e1f97e6253af64</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="KLF Todo">8e18843f97a02550b2e1f97e6253af64</sys_scope>
         <sys_update_name>sys_script_include_7bebf17b97e82550b2e1f97e6253af3d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-02-20 14:57:46</sys_updated_on>
+        <sys_updated_on>2023-02-25 20:57:28</sys_updated_on>
     </sys_script_include>
 </record_update>

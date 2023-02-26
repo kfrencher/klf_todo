@@ -8,7 +8,8 @@
         <description/>
         <name>TaskManager</name>
         <script><![CDATA[/**
- * Object for managing todo tasks
+ * Object for managing todo tasks.
+ * This object uses the Table Manager Pattern. Refer to {@link https://1drv.ms/b/s!AsRNQDyGY_i4n2j8ckxe3J9vZBk2?e=bbZT2g} for more information.
  * 
  * Initial status will be DRAFT.
  * Then user will submit the task using {@link TaskManager.submit} UI Action.
@@ -46,22 +47,22 @@ const TaskManager = (function() {
          * User can see tasks that are assigned to them or their group
          * @param {GlideRecord} task 
          */
-		onQuery(task) {
-            if(Authenticated.isAdmin()) return;
+        onQuery(task) {
+            if (Authenticated.isAdmin()) return;
 
             task.addQuery('opened_by', Authenticated.getUserSysId())
                 .addOrCondition('assigned_to', Authenticated.getUserSysId())
                 .addOrCondition('assigned_group', 'IN', Authenticated.getGroups());
-		}
+        }
 
         /**
          * Called by before business rule when task is completed
          * @param {GlideRecord} task 
          */
-		onComplete(task) {
+        onComplete(task) {
             task.closed_on = new GlideDateTime();
             task.closed_by = Authenticated.getUserSysId();
-		}
+        }
 
         /**
          * Show Reject UI Action whenever we show Approve UI Action
@@ -88,7 +89,7 @@ const TaskManager = (function() {
          * @returns {boolean}
          */
         showApprove(task) {
-            return this.canWrite(task) && 
+            return this.canWrite(task) &&
                 this.isInAssignedGroup(task) &&
                 task.status == STATUS.SUBMITTED;
         }
@@ -109,7 +110,7 @@ const TaskManager = (function() {
          * @returns {boolean}
          */
         showComplete(task) {
-            return this.canWrite(task) && 
+            return this.canWrite(task) &&
                 task.status == STATUS.IN_PROGRESS;
         }
 
@@ -225,7 +226,7 @@ const TaskManager = (function() {
         getDefaultAssignedGroup() {
             const groupName = gs.getProperty('x_912467_klf_todo.default_assigned_group');
             const group = groupUtils.getGroupByName(groupName);
-            if(!group) {
+            if (!group) {
                 throw new Error(`Default assigned group ${groupName} not found`);
             }
             return group.getUniqueValue();
@@ -258,9 +259,9 @@ const TaskManager = (function() {
          * @returns {boolean} True if user has access to "Save" UI Action
          */
         showSave(task) {
-            if(Authenticated.isAdmin()) return true;
+            if (Authenticated.isAdmin()) return true;
 
-            return this.canWrite(task) && 
+            return this.canWrite(task) &&
                 (task.status == STATUS.SUBMITTED || task.status == STATUS.IN_PROGRESS);
         }
 
@@ -300,13 +301,13 @@ const TaskManager = (function() {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-01-29 00:58:02</sys_created_on>
         <sys_id>4b0a803397e02550b2e1f97e6253afa4</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>TaskManager</sys_name>
         <sys_package display_value="KLF Todo" source="x_912467_klf_todo">8e18843f97a02550b2e1f97e6253af64</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="KLF Todo">8e18843f97a02550b2e1f97e6253af64</sys_scope>
         <sys_update_name>sys_script_include_4b0a803397e02550b2e1f97e6253afa4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-02-20 21:06:04</sys_updated_on>
+        <sys_updated_on>2023-02-25 20:14:06</sys_updated_on>
     </sys_script_include>
 </record_update>
