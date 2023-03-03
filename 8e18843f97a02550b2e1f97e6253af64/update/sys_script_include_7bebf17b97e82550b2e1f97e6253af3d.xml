@@ -10,7 +10,7 @@
         <script><![CDATA[/**
  * Object that represents the currently authenticated user.
  */
-const Authenticated = (function() {
+const Authenticated = (function () {
 
     var groupUtils = x_912467_klf.GroupUtils;
 
@@ -27,7 +27,7 @@ const Authenticated = (function() {
 
         /**
          * Returns the sys_user.sys_id of the currently authenticated user.
-         * @returns {string} sys_user.sys_id of the currently authenticated user
+         * @returns {string} - sys_user.sys_id
          */
         getUserSysId() {
             return gs.getUserID();
@@ -57,13 +57,13 @@ const Authenticated = (function() {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-01-29 09:15:33</sys_created_on>
         <sys_id>7bebf17b97e82550b2e1f97e6253af3d</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>Authenticated</sys_name>
         <sys_package display_value="KLF Todo" source="x_912467_klf_todo">8e18843f97a02550b2e1f97e6253af64</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="KLF Todo">8e18843f97a02550b2e1f97e6253af64</sys_scope>
         <sys_update_name>sys_script_include_7bebf17b97e82550b2e1f97e6253af3d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-02-26 20:58:08</sys_updated_on>
+        <sys_updated_on>2023-02-28 04:13:10</sys_updated_on>
     </sys_script_include>
 </record_update>
