@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_export_definition">
+    <sys_export_definition action="INSERT_OR_UPDATE">
+        <field_list>number,assigned_to,sys_mod_count,sys_updated_by,sys_updated_on,sys_tags,sys_id,submitted_on,submitted_by,opened_by,due_date,description,sys_created_by,sys_created_on,closed_on,closed_by,sys_class_name,active,assigned_group,status,label,opened_on</field_list>
+        <filter/>
+        <name>KLF Todo_x_912467_klf_todo_task</name>
+        <sys_class_name>sys_export_definition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-05 10:47:41</sys_created_on>
+        <sys_id>fba0668797156110b2e1f97e6253af77</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>KLF Todo_x_912467_klf_todo_task</sys_name>
+        <sys_package display_value="KLF Todo" source="x_912467_klf_todo">8e18843f97a02550b2e1f97e6253af64</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="KLF Todo">8e18843f97a02550b2e1f97e6253af64</sys_scope>
+        <sys_update_name>sys_export_definition_fba0668797156110b2e1f97e6253af77</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-05 10:48:54</sys_updated_on>
+        <table_name>x_912467_klf_todo_task</table_name>
+        <view display_value="Exp_dfba0668797156110b2e1f97e6253af77" name="exp_dfba0668797156110b2e1f97e6253af77">33a0668797156110b2e1f97e6253af79</view>
+    </sys_export_definition>
+</record_update>

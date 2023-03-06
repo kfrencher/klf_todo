@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_export_set">
+    <sys_export_set action="INSERT_OR_UPDATE">
+        <append_timestamp>false</append_timestamp>
+        <export_definition display_value="KLF Todo_x_912467_klf_todo_task">fba0668797156110b2e1f97e6253af77</export_definition>
+        <export_target display_value="KLF Todo_aws_midserver">0cb0668797156110b2e1f97e6253af86</export_target>
+        <file_name>klf_todo.json</file_name>
+        <format>JSON</format>
+        <max_rows/>
+        <name>KLF Todo</name>
+        <sys_class_name>sys_export_set</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-05 10:47:41</sys_created_on>
+        <sys_id>56ff964797156110b2e1f97e6253af9f</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>KLF Todo</sys_name>
+        <sys_package display_value="KLF Todo" source="x_912467_klf_todo">8e18843f97a02550b2e1f97e6253af64</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="KLF Todo">8e18843f97a02550b2e1f97e6253af64</sys_scope>
+        <sys_update_name>sys_export_set_56ff964797156110b2e1f97e6253af9f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-05 10:49:13</sys_updated_on>
+        <use_display_value>false</use_display_value>
+        <use_label>false</use_label>
+    </sys_export_set>
+</record_update>
