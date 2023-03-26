@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="ecc_agent_script_file">
+    <ecc_agent_script_file action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <checksum/>
+        <description>This program takes a directory path and a zip file name as command line arguments and creates a zip file containing all the files in the directory.</description>
+        <directory>false</directory>
+        <name>zipfolder.js</name>
+        <parent display_value="Todo">2dc6ee4f97156110b2e1f97e6253af26</parent>
+        <script>const fs = require('fs');&#13;
+const AdmZip = require('adm-zip');&#13;
+const path = require('path');&#13;
+&#13;
+/**&#13;
+ * This program takes a directory path and a zip file name as command line arguments and creates a zip file containing all the files in the directory.&#13;
+ */&#13;
+&#13;
+// get the directory path and the zip file name from the commmand line arguments. There should be 4 arguments: node, zipfile.js, the directory path, and the zip file name&#13;
+&#13;
+// check to see if there are 4 arguments and if not, print an error message and exit the program&#13;
+if (process.argv.length !== 4) {&#13;
+    console.log('Usage: node zipfile.js directoryPath zipFileName - e.g. node zipfile.js testfiles files.zip');&#13;
+    process.exit(1);&#13;
+}&#13;
+&#13;
+// The directory containing the files to be zipped&#13;
+const directoryPath = process.argv[2];&#13;
+const zipFileName = process.argv[3];&#13;
+&#13;
+// Get a list of all files in the directory&#13;
+fs.readdir(directoryPath, (err, files) =&gt; {&#13;
+    if (err) throw err;&#13;
+&#13;
+    // Filter out any subdirectories&#13;
+    const filePaths = files.filter((file) =&gt; !fs.statSync(path.join(directoryPath, file)).isDirectory());&#13;
+&#13;
+    // // Create a zip archive&#13;
+    const zip = new AdmZip();&#13;
+&#13;
+    // // Add each file to the archive&#13;
+    filePaths.forEach((filePath) =&gt; {&#13;
+        zip.addFile(filePath, fs.createReadStream(path.join(directoryPath, filePath)));&#13;
+    });&#13;
+&#13;
+    zip.writeZip(directoryPath + '/' + zipFileName);&#13;
+});</script>
+        <script_attachment/>
+        <source/>
+        <sys_class_name>ecc_agent_script_file</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-07 13:29:36</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b4d8d9f797dda110b2e1f97e6253af1e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>zipfolder.js</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="KLF Todo" source="x_912467_klf_todo">8e18843f97a02550b2e1f97e6253af64</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="KLF Todo">8e18843f97a02550b2e1f97e6253af64</sys_scope>
+        <sys_update_name>ecc_agent_script_file_b4d8d9f797dda110b2e1f97e6253af1e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-07 13:29:36</sys_updated_on>
+        <use_attachment>false</use_attachment>
+        <version/>
+    </ecc_agent_script_file>
+</record_update>
